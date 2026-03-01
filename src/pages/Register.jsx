@@ -20,7 +20,7 @@ export default function Register() {
       toast("Account created successfully");
       navigate("/");
     } catch (err) {
-      toast("Signup failed"); 
+      toast("Signup failed"); a
     }
   };
 
