@@ -35,12 +35,12 @@ export default function ExpenseForm({ onSuccess }) {
   };
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow mb-4">
-      <h3 className="font-semibold mb-2">Add Transaction</h3>
+    <div className="bg-white p-6 rounded-2xl shadow-lg mb-6">
+      <h3 className="text-lg font-semibold mb-4 text-gray-700">Add Transaction</h3>
 
-      <div className="grid md:grid-cols-4 gap-3">
+      <div className="grid md:grid-cols-4 gap-4">
         <select
-          className="border p-2 rounded"
+          className="border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200 outline-none"
           value={form.type}
           onChange={(e) => setForm({ ...form, type: e.target.value })}
         >
@@ -51,21 +51,21 @@ export default function ExpenseForm({ onSuccess }) {
         <input
           type="number"
           placeholder="Amount"
-          className="border p-2 rounded"
+          className="border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200 outline-none"
           value={form.amount}
           onChange={(e) => setForm({ ...form, amount: e.target.value })}
         />
 
         <input
           placeholder="Category"
-          className="border p-2 rounded"
+          className="border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200 outline-none"
           value={form.category}
           onChange={(e) => setForm({ ...form, category: e.target.value })}
         />
 
         <input
           placeholder="Description"
-          className="border p-2 rounded"
+          className="border border-gray-300 rounded-lg p-3 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200 outline-none"
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
         />
@@ -73,9 +73,9 @@ export default function ExpenseForm({ onSuccess }) {
 
       <button
         onClick={handleSubmit}
-        className="mt-3 bg-blue-500 text-white px-4 py-2 rounded"
+        className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-200"
       >
-        Add
+        Add Transaction
       </button>
     </div>
   );
