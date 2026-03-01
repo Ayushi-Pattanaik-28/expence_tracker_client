@@ -20,6 +20,9 @@ export default function Login() {
       }
 
       login(res.data);
+
+      toast("Login successful");
+
       navigate("/dashboard");
     } catch (err) {
       toast("Login failed");
