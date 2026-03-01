@@ -1,16 +1,88 @@
-# React + Vite
+# 💰 Personal Expense & Income Tracker – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend for the Personal Expense & Income Tracker assignment.
 
-Currently, two official plugins are available:
+Built with:
+- React (Vite)
+- Tailwind CSS
+- Axios
+- JWT Authentication (session-based)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- User Registration
+- User Login
+- JWT Authentication (sessionStorage)
+- Protected Dashboard
+- Add Income / Expense
+- Update Transaction
+- Delete Transaction
+- Real-time Balance Calculation
+- Responsive UI (Mobile Friendly)
+- Automatic logout on token expiry (401 handling)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Folder Structure
+src/
+│
+├── api/
+│ └── axios.js
+│
+├── context/
+│ └── AuthContext.jsx
+│
+├── pages/
+│ ├── Login.jsx
+│ ├── Register.jsx
+│ └── Dashboard.jsx
+│
+├── components/
+│ ├── Navbar.jsx
+│ ├── ExpenseForm.jsx
+│ └── ExpenseList.jsx
+│
+├── routes/
+│ └── ProtectedRoute.jsx
+│
+├── App.jsx
+└── main.jsx
 
-## Expanding the ESLint configuration
+## ⚙️ Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1️⃣ Clone repository
+
+```bash
+git clone <frontend-repo-url>
+cd frontend
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start development server
+npm run dev
+
+App runs at:
+http://localhost:5173
+
+🔗 Backend Configuration
+Backend base URL is configured in:
+src/api/axios.js
+
+Default:
+baseURL: "http://127.0.0.1:8000"
+Update if backend runs elsewhere.
+
+🔐 Authentication Flow
+User logs in
+Backend returns JWT token
+Token stored in sessionStorage
+Axios interceptor attaches:
+Authorization: Bearer <token>
+On 401 error → auto logout → redirect to login
+
+🎨 UI
+Tailwind CSS
+Clean and minimal
+Mobile responsive
+Inline edit support
+Confirmation before delete
+Alerts for success/error
