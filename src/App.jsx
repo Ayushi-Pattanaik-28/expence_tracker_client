@@ -10,11 +10,9 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          {/* Public Routes */}
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* Protected Route */}
           <Route
             path="/dashboard"
             element={
